@@ -1,0 +1,46 @@
+26322:C 27 Mar 22:45:29.653 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+26322:M 27 Mar 22:45:29.654 # You requested maxclients of 10000 requiring at least 10032 max file descriptors.
+26322:M 27 Mar 22:45:29.654 # Server can't set maximum open files to 10032 because of OS error: Operation not permitted.
+26322:M 27 Mar 22:45:29.654 # Current maximum open files is 4096. maxclients has been reduced to 4064 to compensate for low ulimit. If you need higher maxclients increase 'ulimit -n'.
+26322:M 27 Mar 22:45:29.654 # Creating Server TCP listening socket *:6379: bind: Address already in use
+[2017-03-27 22:45:29 +0800] [26324] [INFO] Starting gunicorn 19.7.0
+[2017-03-27 22:45:29 +0800] [26324] [INFO] Listening at: http://0.0.0.0:8093 (26324)
+[2017-03-27 22:45:29 +0800] [26324] [INFO] Using worker: gevent
+[2017-03-27 22:45:29 +0800] [26341] [INFO] Booting worker with pid: 26341
+[2017-03-27 22:45:29 +0800] [26341] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/usr/lib/python3.5/site-packages/gunicorn/workers/ggevent.py", line 190, in init_process
+    super(GeventWorker, self).init_process()
+  File "/usr/lib/python3.5/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/usr/lib/python3.5/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/lib/python3.5/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/lib/python3.5/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/usr/lib/python3.5/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/lib/python3.5/site-packages/gunicorn/util.py", line 376, in import_app
+    __import__(module)
+ImportError: No module named '/home/renyafeng/code/work/flask/test1/t2'
+[2017-03-27 22:45:29 +0800] [26341] [INFO] Worker exiting (pid: 26341)
+[2017-03-27 22:45:29 +0800] [26324] [INFO] Shutting down: Master
+[2017-03-27 22:45:29 +0800] [26324] [INFO] Reason: Worker failed to boot.
+Traceback (most recent call last):
+  File "/home/renyafeng/embedding/google_vectors/s1.py", line 7, in <module>
+    model = gensim.models.Word2Vec.load_word2vec_format('data', binary=True)
+  File "/usr/lib64/python3.5/site-packages/gensim/models/word2vec.py", line 1172, in load_word2vec_format
+    with utils.smart_open(fname) as fin:
+  File "/usr/lib/python3.5/site-packages/smart_open/smart_open_lib.py", line 129, in smart_open
+    return file_smart_open(parsed_uri.uri_path, mode)
+  File "/usr/lib/python3.5/site-packages/smart_open/smart_open_lib.py", line 613, in file_smart_open
+    return open(fname, mode)
+FileNotFoundError: [Errno 2] No such file or directory: 'data'
+26456:C 27 Mar 22:47:17.677 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+26456:M 27 Mar 22:47:17.679 # You requested maxclients of 10000 requiring at least 10032 max file descriptors.
+26456:M 27 Mar 22:47:17.679 # Server can't set maximum open files to 10032 because of OS error: Operation not permitted.
+26456:M 27 Mar 22:47:17.679 # Current maximum open files is 4096. maxclients has been reduced to 4064 to compensate for low ulimit. If you need higher maxclients increase 'ulimit -n'.
+26456:M 27 Mar 22:47:17.679 # Creating Server TCP listening socket *:6379: bind: Address already in use
